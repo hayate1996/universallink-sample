@@ -55,25 +55,83 @@
                                     <action selector="tappedHttpsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d6Q-VX-bjC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inq-6b-apY">
+                                <rect key="frame" x="270" y="448" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lij-rO-4LR">
+                                <rect key="frame" x="161" y="524" width="78" height="30"/>
+                                <state key="normal" title="UIWebView"/>
+                                <connections>
+                                    <action selector="pressedWebViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GaL-BR-GoZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yol-vY-2ho">
+                                <rect key="frame" x="275" y="524" width="50" height="30"/>
+                                <state key="normal" title="WebKit"/>
+                                <connections>
+                                    <action selector="pressedWebKitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jul-b2-eYf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHd-QG-Esf">
+                                <rect key="frame" x="367" y="524" width="40" height="30"/>
+                                <state key="normal" title="Safari"/>
+                                <connections>
+                                    <action selector="pressedSafariButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l16-e7-Pgt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Lij-rO-4LR" firstAttribute="top" secondItem="vdw-s2-Idb" secondAttribute="bottom" constant="133" id="JdG-n1-PBA"/>
                             <constraint firstItem="vdw-s2-Idb" firstAttribute="top" secondItem="txq-YY-8B2" secondAttribute="bottom" constant="72" id="KuR-a4-V93"/>
+                            <constraint firstItem="Inq-6b-apY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M37-1I-HGw"/>
+                            <constraint firstItem="EHd-QG-Esf" firstAttribute="leading" secondItem="yol-vY-2ho" secondAttribute="trailing" constant="42" id="PtO-2i-xYA"/>
+                            <constraint firstItem="Inq-6b-apY" firstAttribute="top" secondItem="vdw-s2-Idb" secondAttribute="bottom" constant="57" id="bDF-4e-b6M"/>
+                            <constraint firstItem="EHd-QG-Esf" firstAttribute="top" secondItem="vdw-s2-Idb" secondAttribute="bottom" constant="133" id="dMo-Sc-m0w"/>
+                            <constraint firstItem="yol-vY-2ho" firstAttribute="centerX" secondItem="Inq-6b-apY" secondAttribute="centerX" id="gXq-9W-uBj"/>
                             <constraint firstItem="vdw-s2-Idb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mHj-Xp-SlR"/>
                             <constraint firstItem="txq-YY-8B2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="145" id="n7r-hK-QCb"/>
                             <constraint firstItem="txq-YY-8B2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="olU-h8-Ha4"/>
+                            <constraint firstItem="yol-vY-2ho" firstAttribute="top" secondItem="Inq-6b-apY" secondAttribute="bottom" constant="46" id="svg-bc-Wt9"/>
+                            <constraint firstItem="yol-vY-2ho" firstAttribute="leading" secondItem="Lij-rO-4LR" secondAttribute="trailing" constant="36" id="vbD-Hv-87V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="77I-Kl-jTs"/>
                     <connections>
                         <outlet property="httpButton" destination="txq-YY-8B2" id="juN-b7-nTa"/>
                         <outlet property="httpsButton" destination="vdw-s2-Idb" id="ZzO-cr-ubd"/>
+                        <outlet property="safariButton" destination="EHd-QG-Esf" id="STS-IB-qz8"/>
+                        <outlet property="selectedTypeLabel" destination="Inq-6b-apY" id="uyh-Xr-cpb"/>
+                        <outlet property="uiwebviewButton" destination="Lij-rO-4LR" id="EY4-Vi-m3t"/>
+                        <outlet property="webkitButton" destination="yol-vY-2ho" id="gIY-7C-RWL"/>
                         <segue destination="zXg-eH-JXJ" kind="show" identifier="openWebViewController" id="UO2-IR-pYX"/>
+                        <segue destination="Hwa-Ib-Dbr" kind="show" identifier="openWebKitViewController" id="2Vu-Ul-k7E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="519" y="1037"/>
+        </scene>
+        <!--Safari View Controller-->
+        <scene sceneID="U5j-PF-mDW">
+            <objects>
+                <viewController id="Y1M-pG-f03" customClass="SafariViewController" customModule="universallink_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Duf-gV-UJh"/>
+                        <viewControllerLayoutGuide type="bottom" id="HZO-Fu-Fdo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pq3-Wy-ExE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDf-Ix-RKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1300" y="1885"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="6yE-wE-j9F">
@@ -109,7 +167,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OXI-l1-T17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="1753"/>
+            <point key="canvasLocation" x="-283" y="1885"/>
+        </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="bWA-CA-OOy">
+            <objects>
+                <viewController id="Hwa-Ib-Dbr" customClass="WebKitViewController" customModule="universallink_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V0e-Eh-p8I"/>
+                        <viewControllerLayoutGuide type="bottom" id="W4B-bX-Lfw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TFE-LL-A6p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pw-0s-vVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="1885"/>
         </scene>
     </scenes>
 </document>

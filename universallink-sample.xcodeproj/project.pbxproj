@@ -15,6 +15,9 @@
 		F93BE3171BA90E6B00AF818E /* universallink_sampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93BE3161BA90E6B00AF818E /* universallink_sampleTests.swift */; };
 		F93BE3221BA90E6B00AF818E /* universallink_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93BE3211BA90E6B00AF818E /* universallink_sampleUITests.swift */; };
 		F93BE3301BA90FB300AF818E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93BE32F1BA90FB300AF818E /* WebViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F985A3B71BA952B400DBE311 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F985A3B61BA952B400DBE311 /* WebKitViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F985A3B91BA952E600DBE311 /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F985A3B81BA952E600DBE311 /* SafariViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F985A3BB1BA9567900DBE311 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F985A3BA1BA9567900DBE311 /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		F93BE3211BA90E6B00AF818E /* universallink_sampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = universallink_sampleUITests.swift; sourceTree = "<group>"; };
 		F93BE3231BA90E6B00AF818E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F93BE32F1BA90FB300AF818E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F985A3B61BA952B400DBE311 /* WebKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
+		F985A3B81BA952E600DBE311 /* SafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
+		F985A3BA1BA9567900DBE311 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F985A3BB1BA9567900DBE311 /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,7 @@
 		F93BE2F51BA90E6B00AF818E = {
 			isa = PBXGroup;
 			children = (
+				F985A3BA1BA9567900DBE311 /* SafariServices.framework */,
 				F93BE3001BA90E6B00AF818E /* universallink-sample */,
 				F93BE3151BA90E6B00AF818E /* universallink-sampleTests */,
 				F93BE3201BA90E6B00AF818E /* universallink-sampleUITests */,
@@ -102,6 +110,8 @@
 				F93BE3011BA90E6B00AF818E /* AppDelegate.swift */,
 				F93BE3031BA90E6B00AF818E /* ViewController.swift */,
 				F93BE32F1BA90FB300AF818E /* WebViewController.swift */,
+				F985A3B61BA952B400DBE311 /* WebKitViewController.swift */,
+				F985A3B81BA952E600DBE311 /* SafariViewController.swift */,
 				F93BE3051BA90E6B00AF818E /* Main.storyboard */,
 				F93BE3081BA90E6B00AF818E /* Assets.xcassets */,
 				F93BE30A1BA90E6B00AF818E /* LaunchScreen.storyboard */,
@@ -260,6 +270,8 @@
 			files = (
 				F93BE3041BA90E6B00AF818E /* ViewController.swift in Sources */,
 				F93BE3301BA90FB300AF818E /* WebViewController.swift in Sources */,
+				F985A3B91BA952E600DBE311 /* SafariViewController.swift in Sources */,
+				F985A3B71BA952B400DBE311 /* WebKitViewController.swift in Sources */,
 				F93BE3021BA90E6B00AF818E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +499,7 @@
 				F93BE3281BA90E6B00AF818E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F93BE3291BA90E6B00AF818E /* Build configuration list for PBXNativeTarget "universallink-sampleTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +508,7 @@
 				F93BE32B1BA90E6B00AF818E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F93BE32C1BA90E6B00AF818E /* Build configuration list for PBXNativeTarget "universallink-sampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +517,7 @@
 				F93BE32E1BA90E6B00AF818E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

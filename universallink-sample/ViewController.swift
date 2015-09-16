@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
@@ -17,35 +18,87 @@ class ViewController: UIViewController {
     let https:String = "https://"
     let twitter = "twitter.com"
     let google = "google.com"
-    let webviewIdentifier = "openWebViewController"
+    let webViewIdentifier = "openWebViewController"
+    let webKitViewIdentifier = "openWebKitViewController"
+    let safariViewIdentifier = "openSafariViewController"
     var lastOpenedURL:NSURL?
+
+    let typeWebView = "WebView"
+    let typeWebKit = "WebKit"
+    let typeSafari = "Safari"
+
+    @IBOutlet var uiwebviewButton: UIButton!
+    @IBOutlet var webkitButton: UIButton!
+    @IBOutlet var safariButton: UIButton!
+    @IBOutlet var selectedTypeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        selectedTypeLabel.text = typeWebView
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func tappedHttpButton(sender: AnyObject) {
         lastOpenedURL = NSURL(string: http + google)
-        self.performSegueWithIdentifier(webviewIdentifier, sender: nil)
+
+        if selectedTypeLabel.text == typeWebView {
+            self.performSegueWithIdentifier(webViewIdentifier, sender: nil)
+        }
+        else if selectedTypeLabel.text == typeWebKit {
+            self.performSegueWithIdentifier(webKitViewIdentifier, sender: nil)
+        }
+        else if selectedTypeLabel.text == typeSafari {
+            let vc = SafariViewController(URL: lastOpenedURL!, entersReaderIfAvailable: true)
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+
     }
 
     @IBAction func tappedHttpsButton(sender: AnyObject) {
         lastOpenedURL = NSURL(string: https + google)
-        self.performSegueWithIdentifier(webviewIdentifier, sender: nil)
+    
+        if selectedTypeLabel.text == typeWebView {
+            self.performSegueWithIdentifier(webViewIdentifier, sender: nil)
+        }
+        else if selectedTypeLabel.text == typeWebKit {
+            self.performSegueWithIdentifier(webKitViewIdentifier, sender: nil)
+        }
+        else if selectedTypeLabel.text == typeSafari {
+            let vc = SafariViewController(URL: lastOpenedURL!, entersReaderIfAvailable: true)
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
 
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let vc = segue.destinationViewController as! WebViewController
-        vc.setOpenURL(lastOpenedURL!)
+        switch segue.identifier! {
+
+            case "openWebViewController" :
+                let vc = segue.destinationViewController as! WebViewController
+                vc.setOpenURL(self.lastOpenedURL!)
+                break
+            case "openWebKitViewController",
+                 "openSafariViewController" :
+                break
+            default :
+                break
+
+        }
     }
 
+    @IBAction func pressedWebViewButton(sender: AnyObject) {
+        selectedTypeLabel.text = typeWebView
+    }
 
+    @IBAction func pressedWebKitButton(sender: AnyObject) {
+        selectedTypeLabel.text = typeWebKit
+    }
+
+    @IBAction func pressedSafariButton(sender: AnyObject) {
+        selectedTypeLabel.text = typeSafari
+    }
 }
 

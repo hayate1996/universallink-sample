@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9pt-6G-qmP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lPE-l9-8Ms">
+            <objects>
+                <navigationController id="9pt-6G-qmP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ekw-xP-Ov0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eh5-Wu-1h7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpc-gZ-edD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239" y="1037"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="universallink_sample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +32,84 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txq-YY-8B2">
+                                <rect key="frame" x="193" y="209" width="215" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="h1o-yG-x2d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="HTTP"/>
+                                <connections>
+                                    <action selector="tappedHttpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNu-5s-51D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdw-s2-Idb">
+                                <rect key="frame" x="193" y="336" width="215" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="3Qc-Ts-Ony"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <state key="normal" title="HTTPS"/>
+                                <connections>
+                                    <action selector="tappedHttpsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d6Q-VX-bjC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vdw-s2-Idb" firstAttribute="top" secondItem="txq-YY-8B2" secondAttribute="bottom" constant="72" id="KuR-a4-V93"/>
+                            <constraint firstItem="vdw-s2-Idb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mHj-Xp-SlR"/>
+                            <constraint firstItem="txq-YY-8B2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="145" id="n7r-hK-QCb"/>
+                            <constraint firstItem="txq-YY-8B2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="olU-h8-Ha4"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="77I-Kl-jTs"/>
+                    <connections>
+                        <outlet property="httpButton" destination="txq-YY-8B2" id="juN-b7-nTa"/>
+                        <outlet property="httpsButton" destination="vdw-s2-Idb" id="ZzO-cr-ubd"/>
+                        <segue destination="zXg-eH-JXJ" kind="show" identifier="openWebViewController" id="UO2-IR-pYX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="519" y="1037"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="6yE-wE-j9F">
+            <objects>
+                <viewController id="zXg-eH-JXJ" customClass="WebViewController" customModule="universallink_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dJE-bh-6PK"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Ac-lO-oKM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ls3-xi-jjE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kf-pz-dVY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zXg-eH-JXJ" id="fbj-w1-sJ1"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5kf-pz-dVY" firstAttribute="width" secondItem="ls3-xi-jjE" secondAttribute="width" id="2IZ-zt-q7P"/>
+                            <constraint firstItem="5kf-pz-dVY" firstAttribute="height" secondItem="ls3-xi-jjE" secondAttribute="height" id="Lbf-vD-2JA"/>
+                            <constraint firstItem="5kf-pz-dVY" firstAttribute="leading" secondItem="ls3-xi-jjE" secondAttribute="leadingMargin" constant="-20" id="WZB-Jx-v5y"/>
+                            <constraint firstItem="5kf-pz-dVY" firstAttribute="top" secondItem="ls3-xi-jjE" secondAttribute="topMargin" id="cWq-Of-yyr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="5kf-pz-dVY" id="ILM-B3-JYp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OXI-l1-T17" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="1753"/>
         </scene>
     </scenes>
 </document>

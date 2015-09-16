@@ -14,6 +14,7 @@
 		F93BE30C1BA90E6B00AF818E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93BE30A1BA90E6B00AF818E /* LaunchScreen.storyboard */; };
 		F93BE3171BA90E6B00AF818E /* universallink_sampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93BE3161BA90E6B00AF818E /* universallink_sampleTests.swift */; };
 		F93BE3221BA90E6B00AF818E /* universallink_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93BE3211BA90E6B00AF818E /* universallink_sampleUITests.swift */; };
+		F93BE3301BA90FB300AF818E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93BE32F1BA90FB300AF818E /* WebViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F93BE31D1BA90E6B00AF818E /* universallink-sampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "universallink-sampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93BE3211BA90E6B00AF818E /* universallink_sampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = universallink_sampleUITests.swift; sourceTree = "<group>"; };
 		F93BE3231BA90E6B00AF818E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93BE32F1BA90FB300AF818E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				F93BE3011BA90E6B00AF818E /* AppDelegate.swift */,
 				F93BE3031BA90E6B00AF818E /* ViewController.swift */,
+				F93BE32F1BA90FB300AF818E /* WebViewController.swift */,
 				F93BE3051BA90E6B00AF818E /* Main.storyboard */,
 				F93BE3081BA90E6B00AF818E /* Assets.xcassets */,
 				F93BE30A1BA90E6B00AF818E /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F93BE3041BA90E6B00AF818E /* ViewController.swift in Sources */,
+				F93BE3301BA90FB300AF818E /* WebViewController.swift in Sources */,
 				F93BE3021BA90E6B00AF818E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

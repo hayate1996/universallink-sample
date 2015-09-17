@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F922C4011BAA952800B09316 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F922C4001BAA952800B09316 /* WebKit.framework */; };
 		F93BE3021BA90E6B00AF818E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93BE3011BA90E6B00AF818E /* AppDelegate.swift */; };
 		F93BE3041BA90E6B00AF818E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93BE3031BA90E6B00AF818E /* ViewController.swift */; };
 		F93BE3071BA90E6B00AF818E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93BE3051BA90E6B00AF818E /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F922C4001BAA952800B09316 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F93BE2FE1BA90E6B00AF818E /* universallink-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "universallink-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93BE3011BA90E6B00AF818E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F93BE3031BA90E6B00AF818E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F922C4011BAA952800B09316 /* WebKit.framework in Frameworks */,
 				F985A3BB1BA9567900DBE311 /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +89,7 @@
 		F93BE2F51BA90E6B00AF818E = {
 			isa = PBXGroup;
 			children = (
+				F922C4001BAA952800B09316 /* WebKit.framework */,
 				F985A3BA1BA9567900DBE311 /* SafariServices.framework */,
 				F93BE3001BA90E6B00AF818E /* universallink-sample */,
 				F93BE3151BA90E6B00AF818E /* universallink-sampleTests */,

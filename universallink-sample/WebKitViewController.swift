@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import WebKit
 
 class WebKitViewController: UIViewController {
 
+    let webview = WKWebView()
     override func viewDidLoad() {
         super.viewDidLoad()
 

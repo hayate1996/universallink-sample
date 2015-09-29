@@ -22,15 +22,57 @@ class universallink_sampleUITests: XCTestCase {
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        let httpButton = app.buttons["HTTP"]
+        httpButton.tap()
+        
+        let backButton = app.navigationBars["universallink_sample.WebView"].childrenMatchingType(.Button).matchingIdentifier("Back").elementBoundByIndex(0)
+        backButton.tap()
+        
+        let httpsButton = app.buttons["HTTPS"]
+        httpsButton.tap()
+        backButton.tap()
+        app.buttons["UIWebView"].tap()
+        app.buttons["WebKit"].tap()
+        httpButton.tap()
+        
+        let backButton2 = app.navigationBars["universallink_sample.WebKitView"].childrenMatchingType(.Button).matchingIdentifier("Back").elementBoundByIndex(0)
+        backButton2.tap()
+        httpsButton.tap()
+        backButton2.tap()
+        app.buttons["Safari"].tap()
+        httpButton.tap()
+        
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+        httpsButton.tap()
+        doneButton.tap()
+    }
+
+    func testSearch() {
+        
+        let app = XCUIApplication()
+        app.buttons["HTTP"].tap()
+        
+        let universallinkSampleWebviewNavigationBar = app.navigationBars["universallink_sample.WebView"]
+        universallinkSampleWebviewNavigationBar.tap()
+        
+        let httpsButton = app.buttons["HTTPS"]
+        universallinkSampleWebviewNavigationBar.childrenMatchingType(.Button).matchingIdentifier("Back").elementBoundByIndex(0).tap()
+        app.buttons["Safari"].tap()
+        httpsButton.tap()
+        app.typeText("google")
+        app.buttons["Done"].tap()
+        app.buttons["WebKit"].tap()
+
     }
     
 }
